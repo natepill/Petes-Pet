@@ -53,3 +53,5 @@ app.use((err, req, res, next) => {
 });
 
 module.exports = app;
+
+//Need to use nodemon to start server? 

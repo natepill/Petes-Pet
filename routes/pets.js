@@ -5,6 +5,20 @@ const Pet = require('../models/pet');
 module.exports = (app) => {
 
   // INDEX PET => index.js
+  app.get('/search', (req, res) => {
+  term = new RegExp(req.query.term, 'i')
+
+  // Pet.find({'name': term}).exec((err, pets) => {
+  //   res.render('pets-index', { pets: pets });
+  // })
+
+  //Search by name or breed
+  Pet.find({$or: [{'name': term}, {'species': term}]}).exec((err, pets) => {
+      res.render('pets-index', {pets: pets});
+
+  })
+});
+
 
   // NEW PET
   app.get('/pets/new', (req, res) => {
