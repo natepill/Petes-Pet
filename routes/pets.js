@@ -6,18 +6,22 @@ module.exports = (app) => {
 
   // INDEX PET => index.js
   app.get('/search', (req, res) => {
-  term = new RegExp(req.query.term, 'i')
+      term = new RegExp(req.query.term, 'i')
 
-  // Pet.find({'name': term}).exec((err, pets) => {
-  //   res.render('pets-index', { pets: pets });
-  // })
+      const page = req.query.page || 1
 
-  //Search by name or breed
-  Pet.find({$or: [{'name': term}, {'species': term}]}).exec((err, pets) => {
-      res.render('pets-index', {pets: pets});
+      Pet.paginate({
+          $or: [{'name': term},
+                {'species': term}
+                ]
+      }, {page:page}).then((results) => {
+          res.render('pets-index', {pets: results.docs, pagesCount: results.pages, currentPage: page, term: req.query.term});
+      })
 
-  })
-});
+      // Instead of calling Pet.find(), we just took the query from it and had paginate use it!
+
+  });
+
 
 
   // NEW PET
