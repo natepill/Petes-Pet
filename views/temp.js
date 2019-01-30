@@ -1,16 +1,22 @@
-nav(aria-label='Page navigation example').d-flex.justify-content-center
-  ul.pagination
-    li.page-item
-      a.page-link(href='#') Previous
+if (document.querySelector('#new-pet')) {
+    document.querySelector('#new-pet').addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    - var i = 1;
-    while i <= pagesCount
-      li.page-item
-        a.page-link(href=`?pages=${i}`)= i++
+        let pet = {};
+        const inputs = document.querySelectorAll('.form-control');
+        for (const input of inputs) {
+            pet[input.name] = input.value;
+        }
 
-    li.page-item
-      a.page-link(href='#') Next
-
-
-
-      
+        axios.post('/pets', pet)
+            .then(function (response) {
+                window.location.replace(`/pets/${response.data.pet._id}`);
+            })
+            .catch(function (error) {
+                const alert = document.getElementById('alert')
+                alert.classList.add('alert-warning');
+                alert.textContent = 'Oops, something went wrong saving your pet. Please check your information and try again.';
+                alert.style.display = 'block';
+            });
+    });
+}
