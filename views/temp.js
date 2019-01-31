@@ -1,28 +1,20 @@
-if (document.querySelector('#new-pet')) {
-    document.querySelector('#new-pet').addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Use FormData to grab everything now that we have files mixed in with text
-        var form = document.getElementById("new-pet");
-        var pet = new FormData(form);
+// PURCHASE
+app.post('/pets/:id/purchase', (req, res) => {
+  console.log(req.body);
+  // Set your secret key: remember to change this to your live secret key in production
+  // See your keys here: https://dashboard.stripe.com/account/apikeys
+  var stripe = require("stripe")(process.env.PRIVATE_STRIPE_API_KEY);
 
-        // Assign the multipart/form-data headers to axios does a proper post
-        axios.post('/pets', pet, {
-            headers: {
-                'Content-Type': 'multipart/form-data;',
-            }
-        })
-            .then(function (response) {
-                window.location.replace(`/pets/${response.data.pet._id}`);
-            })
-            .catch(function (error) {
-                const alert = document.getElementById('alert')
-                alert.classList.add('alert-warning');
-                alert.textContent = 'Oops, something went wrong saving your pet. Please check your information and try again.';
-                alert.style.display = 'block';
-                setTimeout(() => {
-                    alert.style.display = 'none';
-                    alert.classList.remove('alert-warning');
-                }, 3000)
-            });
-    });
-}
+  // Token is created using Checkout or Elements!
+  // Get the payment token ID submitted by the form:
+  const token = req.body.stripeToken; // Using Express
+
+  const charge = stripe.charges.create({
+    amount: 999,
+    currency: 'usd',
+    description: 'Example charge',
+    source: token,
+  }).then(() => {
+    res.redirect(`/pets/${req.params.id}`);
+  });
+});
