@@ -138,10 +138,10 @@ app.post('/pets/:id/purchase', (req, res) => {
       source: token,
     }).then((chg) => {
       res.redirect(`/pets/${req.params.id}`);
-      });
+      }).catch(err => {
+          console.log('Error: ' + err);
+        });
     })
-    .catch(err => {
-      console.log('Error: ' + err);
-    });
+
   })
 };

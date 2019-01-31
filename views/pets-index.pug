@@ -6,7 +6,7 @@ block content
       .col-sm-4.justify-content-center
         .card
           if pet.avatarUrl
-            img.card-img-top(src=pet.picUrl, alt='Card image cap')
+            img.card-img-top(src=pet.avatarUrl + '-standard.', alt='Card image cap')
           else
             img.card-img-top(src=pet.picUrl, alt='Card image cap')
               
