@@ -55,10 +55,16 @@ module.exports = (app) => {
                 .exec(function(err, pets){
                     if (err){return res.status(400).send(err)}
 
-                    if (req.header('Content-Type') == 'application/json'){
-                        return res.json({pets: pets});
+                    if (req.header('Content-Type') == 'application/json') {
+                        return res.json({
+                            pets: pets,
+                            term: req.query.term,
+                        });
                     } else {
-                        return res.render('pets-index', {pets: pets, term: req.query.term});
+                        return res.render('pets-index', {
+                            pets: pets,
+                            term: req.query.term
+                        });
                     }
                 })
             });
