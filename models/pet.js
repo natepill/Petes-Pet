@@ -26,6 +26,15 @@ const PetSchema = new Schema({
 });
 
 
+
+PetSchema.index({
+    name: 'text',
+    species: 'text',
+    favoriteFood: 'text',
+    description: 'text'
+});
+
+
 PetSchema.plugin(mongoosePaginate);
 
 

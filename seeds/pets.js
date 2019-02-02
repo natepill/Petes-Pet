@@ -24,7 +24,9 @@ module.exports = [
         "favoriteFood": "Beef",
         "picUrl": "https://www.pocketpitbull.com/wp-content/uploads/2017/03/blue-staffy-pitbull-370x208.jpg",
         "picUrlSq": "http://www.vrcpitbull.com/wp-content/uploads/2011/02/VAMPVAMP%E2%80%A2.jpg",
-        "description": "Rolfe is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food"
+        "description": "Rolfe is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food",
+        "price": 10
+
     },
     {
         "name": "Princhi",
@@ -33,7 +35,8 @@ module.exports = [
         "favoriteFood": "Fish",
         "picUrl": "http://www.dogbreedslist.info/uploads/allimg/dog-pictures/West-Highland-White-Terrier-2.jpg",
         "picUrlSq": "https://upload.wikimedia.org/wikipedia/commons/2/2c/West_Highland_White_Terrier_Krakow.jpg",
-        "description": "Princhi is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food"
+        "description": "Princhi is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food",
+        "price": 10
     },
     {
         "name": "Mr. Fluffles",
@@ -42,7 +45,8 @@ module.exports = [
         "favoriteFood": "Chicken",
         "picUrl": "https://i.ytimg.com/vi/-57vwuw_aY8/maxresdefault.jpg",
         "picUrlSq": "http://www.caninest.com/images/black-poodle.jpg",
-        "description": "Mr. Fluffles is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food"
+        "description": "Mr. Fluffles is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food",
+        "price": 10
     },
     {
         "name": "Santa's Little Helper",
@@ -51,7 +55,8 @@ module.exports = [
         "favoriteFood": "Pork",
         "picUrl": "http://via.placeholder.com/350x150",
         "picUrlSq": "http://via.placeholder.com/250x250",
-        "description": "Santa's Little Helper is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food"
+        "description": "Santa's Little Helper is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food",
+        "price": 10
     },
     {
         "name": "Alf",
@@ -60,7 +65,8 @@ module.exports = [
         "favoriteFood": "Cats",
         "picUrl": "http://via.placeholder.com/350x150",
         "picUrlSq": "http://via.placeholder.com/250x250",
-        "description": "Alf is an alien and he's a good alien who loves to play and hang out with his owners. He also likes to nap and enjoys eating cats"
+        "description": "Alf is an alien and he's a good alien who loves to play and hang out with his owners. He also likes to nap and enjoys eating cats",
+        "price": 10
     },
     {
         "name": "Bubba",
@@ -69,6 +75,7 @@ module.exports = [
         "favoriteFood": "Dragon",
         "picUrl": "http://via.placeholder.com/350x150",
         "picUrlSq": "http://via.placeholder.com/250x250",
-        "description": "Bubba is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food"
+        "description": "Bubba is a dog and he's a good dog who loves to play and hang out with his owners. He also likes to nap and enjoys eating dog food",
+        "price": 10
     }
 ]
