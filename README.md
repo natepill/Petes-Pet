@@ -17,7 +17,7 @@ Upload pictures of pets from new and edit forms
 Buy pets using Stripe.
 
 ### Send Emails
-Send an email when a pet is purchased.
+Send an email when a pet is purchased w/ Mailgun
 
 ### Full Text Search
 Fuzzy and full-text search on multiple criteria
